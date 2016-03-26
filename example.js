@@ -1,7 +1,6 @@
 p = require("./pdfRuler");
 p.pdf2JSON("draw.pdf").then(pdf_json => {
-   var tolerance = .2;
-   p.tolerance = tolerance;
+   p.tolerance = .2;
 
    // identify anchor objects
    var draw_header               = p.findCoords(pdf_json, 'Prezime');
@@ -40,7 +39,7 @@ p.pdf2JSON("draw.pdf").then(pdf_json => {
    header = p.extractLines(pdf_json, undefined, y_range);
 
    console.log('headings:', header.rows[0].map(m => m.value));
-   console.log('values::',  header.rows[1].map(m => m.value));
+   console.log('values:',   header.rows[1].map(m => m.value));
 
 }, function(err) {
    console.log(err);
