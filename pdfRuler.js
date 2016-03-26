@@ -18,7 +18,6 @@
 
    pdfRuler.fetchPDF = fetchPDF;
    function fetchPDF(fileName, callback) {
-      if (!pdfRuler.files.length) return;
       var pdfParser = new PDFParser();
       pdfParser.on("pdfParser_dataError", errData => console.error(errData) );
       pdfParser.on("pdfParser_dataReady", pdfData => {
