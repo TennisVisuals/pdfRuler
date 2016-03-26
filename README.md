@@ -10,6 +10,6 @@ pdfRuler is a small set of utilities for working with [pdf2json](https://github.
 
 ### configuration:
 - **pdfRuler.pdfCache = "./";**
-- **pdfRuler.tolerance = .2;** controls the range within which **extractLines** considers page elements to be part of the same row/column
+- **pdfRuler.tolerance = .2;** controls the range within which **pdfRuler.extractLines()** considers page elements to be part of the same row/column
 
 Please see the attached example.
