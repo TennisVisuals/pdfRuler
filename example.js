@@ -1,5 +1,4 @@
 p = require("./pdfRuler");
-p.localCacheList();
 p.pdf2JSON("draw.pdf").then(pdf_json => {
    var tolerance = .2;
    p.tolerance = tolerance;

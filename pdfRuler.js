@@ -13,7 +13,7 @@
    pdfRuler.localCacheList = localCacheList;
    function localCacheList() {
       var files = fs.readdirSync(pdfRuler.pdfCache);
-      pdfRuler.files = files.filter(function(f) { return f.indexOf('DS_Store') < 0 && f.indexOf('un~') < 0; });
+      pdfRuler.files = files.filter(function(f) { return f.toLowerCase().indexOf('.pdf') > 0; });
    }
 
    pdfRuler.fetchPDF = fetchPDF;
@@ -44,7 +44,6 @@
             resolve(pdfData.data); 
          });
 
-         if (!pdfRuler.files.length) reject();
          fs.readFile(pdfRuler.pdfCache + fileName, function (err, pdfBuffer) {
             if (!err) { 
                pdfParser.parseBuffer(pdfBuffer); 
